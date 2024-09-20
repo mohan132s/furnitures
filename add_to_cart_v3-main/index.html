@@ -1,0 +1,219 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Furniture Billing Application</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body class="">
+    <style>
+        @media only screen and (max-width: 992px) {
+    .listProducts{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* mobile */
+@media only screen and (max-width: 768px) {
+    .listProducts{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.listProducts .item img{
+    width: 90%;
+    filter: drop-shadow(0 30px 20px rgba(69, 69, 69, 0.6));
+}
+.listProducts{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.listProducts .item{
+    background-color: #383837;
+    padding: 20px;
+    border-radius: 20px;
+    position:relative;
+}
+.listProducts .item h2{
+    font-weight: 500;
+    font-size: large;
+}
+.listProducts.item .price{
+    letter-spacing: 7px;
+    font-size: small;
+}
+.listProducts .item button{
+    background-color: #353432;
+    color: #eee;
+    border: none;
+    padding: 10px 10px;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+body{
+    background-color: #383837;
+}
+.view-more{
+    background-color: #ffff;
+    padding: 10px;
+    border-radius: 0px 0px 20px 20px;
+}
+.glass{
+    background-color: #ffffff2b;
+    border-radius: 20px 20px 0px 0px;
+}
+.order-button{
+    padding:15px;
+    background-color: rgb(188, 218, 54);
+    border-radius: 20px;
+}
+    /* Responsive Styles */
+    @media only screen and (max-width: 992px) {
+            .listProducts {
+                grid-template-columns: repeat(3, 1fr); /* Show three items per row */
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .listProducts {
+                grid-template-columns: repeat(2, 1fr); /* Show two items per row */
+                gap: 15px; /* Reduced gap for smaller screens */
+                margin-top: 10px; /* Reduced margin on smaller screens */
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .listProducts {
+                grid-template-columns: repeat(1, 1fr); /* Show one item per row on very small screens */
+                gap: 10px; /* Further reduced gap for very small screens */
+                margin-top: 5px; /* Further reduced margin on very small screens */
+            }
+            .header{
+                text-align: center;
+                display: flex;
+                justify-content: center;
+            }
+           
+                
+           }
+           
+         
+    </style>
+    <div class="container">
+        <header>
+            <div class="title" style="color: #ffff;">CATEGORIES LIST</div>
+            <div class="icon-cart">
+                <!-- <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+                    <path style="filter: invert(1) !important;" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0h8m-8 0-1-4m9 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-9-4h10l2-7H3m2 7L3 4m0 0-.792-3H1"/>
+                </svg> -->
+                <!-- <span>0</span> -->
+            </div>
+           <h3><a href="/orders.html" class="order-button" style="color:#ffff!important;text-decoration:none!important;">orders</a></h4>
+        </header>
+        <div class="listProducts">
+
+            <div data-id="9" class="item"><div class="glass"><img src="image/sofa.png" alt=""></div>
+                <div class="view-more">
+                    <h2>SOFA</h2>
+                    <button><a href="/sofa-categories.html" style="color:#ffff!important;text-decoration:none!important;">View More</a></button>
+                </div>
+            </div>
+            <div data-id="10" class="item"><div class="glass"><img src="image/2.png" alt=""></div>
+                <div class="view-more">
+                    <h2>LOUNGE CHAIR</h2>
+                    <button><a href="/product-item.html" style="color:#ffff!important;text-decoration:none!important;">View More</a></button>
+                </div>
+            </div>
+            <div data-id="11" class="item"><div class="glass"><img src="image/bed.png" alt=""></div>
+                <div class="view-more">
+                    <h2>BED</h2>
+                    <button><a href="#" style="color:#ffff!important;text-decoration:none!important;">View More</a></button>
+                </div>
+            </div>
+            <div data-id="12" class="item"><div class="glass"><img src="image/cupboard.png" alt=""></div>
+                <div class="view-more">
+                    <h2>DRAWER</h2>
+                    <button><a href="#" style="color:#ffff!important;text-decoration:none!important;">View More</a></button>
+                </div>
+            </div>
+            <div data-id="13" class="item"><div class="glass"><img src="image/dressing-table.png" alt=""></div>
+                <div class="view-more">
+                    <h2>DRESSING TABLE</h2>
+                    <button><a href="#" style="color:#ffff!important;text-decoration:none!important;">View More</a></button>
+                </div>
+            </div>
+            <div data-id="14" class="item"><div class="glass"><img src="image/dinning-table.png" alt=""></div>
+                <div class="view-more">
+                    <h2>DINNING TABLE</h2>
+                    <button><a href="#" style="color:#ffff!important;text-decoration:none!important;">View More</a></button>
+                </div>
+            </div>
+            <div data-id="15" class="item"><div class="glass"><img src="image/recliner-sofa.png" alt=""></div>
+                <div class="view-more">
+                    <h2>RECLINER SOFA</h2>
+                    <button><a href="#" style="color:#ffff!important;text-decoration:none!important;">View More</a></button>
+                </div>
+            </div>
+            <div data-id="16" class="item"><div class="glass"><img src="image/wooden-almirah.png" alt=""></div>
+                <div class="view-more">
+                    <h2>WOODEN ALMIRAH</h2>
+                    <button><a href="#" style="color:#ffff!important;text-decoration:none!important;">View More</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cartTab">
+        <h1>Shopping Cart</h1>
+        <div class="listCart">
+            
+        </div>
+        <div class="btn">
+            <button class="closes">CLOSE</button>
+            <button class="checkOuts">Check Out</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
