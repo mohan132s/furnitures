@@ -3,42 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <title>Order History</title>
+    <title>Order Summary</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
     <style>
-        .order-history {
-            margin: 20px auto;
-            max-width: 800px; /* Center the container */
-        }
-        .order-card {
-            margin-bottom: 20px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Add shadow for depth */
-            background-color:#fdffed;
-        }
-        .order-status {
-            font-weight: bold;
-            color: #28a745; /* Green color for status */
-        }
-        .order-total {
-            font-size: 1.25rem;
-            font-weight: bold;
-        }
-        .view-details-btn {
-            margin-top: 10px; /* Space above button */
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 576px) {
-            .order-card {
-                padding: 15px; /* Reduce padding on small screens */
-            }
-            .order-total {
-                font-size: 1rem; /* Adjust total font size */
-            }
-        }
         * {
     box-sizing: border-box;
 }
@@ -99,13 +69,9 @@ tbody tr:hover {
     }
 }
     </style>
-</head>
-<body>
 
-<div class="container order-history">
-    <h2 class="text-center mb-4">Order History</h2>
-
-   <div style="overflow-x:auto;">
+<div id="content">
+    <h1>Order Summary</h1>
     <table>
         <thead>
             <tr>
@@ -145,12 +111,26 @@ tbody tr:hover {
             </tr>
         </tbody>
     </table>
-</div>
+
+    <!-- Button to download PDF -->
+    <button id="download-pdf">Download PDF</button>
+
 </div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+// Function to download PDF
+document.getElementById('download-pdf').addEventListener('click', () => {
+    const element = document.getElementById('content');
+    const options = {
+        filename: 'order_summary.pdf',
+        margin: 0,
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+    html2pdf().set(options).from(element).save();
+});
+</script>
 
 </body>
 </html>
