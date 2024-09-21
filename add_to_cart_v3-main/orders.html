@@ -39,6 +39,65 @@
                 font-size: 1rem; /* Adjust total font size */
             }
         }
+        * {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+thead {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #ddd;
+}
+
+@media screen and (max-width: 600px) {
+    thead {
+        display: none; /* Hide header on small screens */
+    }
+    
+    tr {
+        display: block; /* Make each row a block */
+        margin-bottom: 15px; /* Space between rows */
+        border: 1px solid #ddd; /* Border around rows */
+    }
+    
+    td {
+        display: block; /* Make each cell a block */
+        text-align: right; /* Align text to right */
+        position: relative; /* Position for data-label */
+        padding-left: 50%; /* Space for data-label */
+    }
+    
+    td::before {
+        content: attr(data-label); /* Use data-label for cell description */
+        position: absolute;
+        left: 10px; /* Position of label */
+        text-align: left; /* Align label to left */
+        font-weight: bold; /* Bold label */
+    }
+}
     </style>
 </head>
 <body>
@@ -46,50 +105,47 @@
 <div class="container order-history">
     <h2 class="text-center mb-4">Order History</h2>
 
-    <div class="row">
-        <div class="col-md-12">
-            <!-- Order Card Example -->
-            <div class="order-card">
-                <div class="d-flex justify-content-between align-items-center">
-                    <h5>Order #12345</h5>
-                    <span class="order-status">Delivered</span>
-                </div>
-                <p><strong>Date:</strong> 01/15/2023</p>
-                <p><strong>Invoiced To:</strong> John Doe</p>
-                <p class="order-total"><strong>Total Amount:</strong> $1,200.00</p>
-                <ul class="list-unstyled">
-                    <li>Sofa Set - $800.00</li>
-                    <li>Material: Leather</li>
-                    <li>Color: Black</li>
-                    <li>Quantity: 1</li>
-                </ul>
-                <button class="btn btn-info view-details-btn">View Details</button>
-                <button class="btn btn-info view-details-btn">Bill</button>
-            </div>
-
-            <!-- Repeat for more orders -->
-            <div class="order-card">
-                <div class="d-flex justify-content-between align-items-center">
-                    <h5>Order #12346</h5>
-                    <span class="order-status">Shipped</span>
-                </div>
-                <p><strong>Date:</strong> 02/10/2023</p>
-                <p><strong>Invoiced To:</strong> Jane Smith</p>
-                <p class="order-total"><strong>Total Amount:</strong> $600.00</p>
-                <ul class="list-unstyled">
-                    <li>Armchair - $300.00</li>
-                    <li>Material: Fabric</li>
-                    <li>Color: Grey</li>
-                    <li>Quantity: 2</li>
-                </ul>
-                <button class="btn btn-info view-details-btn">View Details</button>
-                <button class="btn btn-info view-details-btn">Bill</button>
-            </div>
-
-            <!-- Add more order cards as needed -->
-        </div>
-    </div>
-
+   <div style="overflow-x:auto;">
+    <table>
+        <thead>
+            <tr>
+                <th>Order Number</th>
+                <th>Status</th>
+                <th>Date</th>
+                <th>Invoiced To</th>
+                <th>Total Amount</th>
+                <th>Item Description</th>
+                <th>Material</th>
+                <th>Color</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>#12345</td>
+                <td>Delivered</td>
+                <td>01/15/2023</td>
+                <td>John Doe</td>
+                <td>$1,200.00</td>
+                <td>Sofa Set</td>
+                <td>Leather</td>
+                <td>Black</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>#12346</td>
+                <td>Shipped</td>
+                <td>02/10/2023</td>
+                <td>Jane Smith</td>
+                <td>$600.00</td>
+                <td>Armchair</td>
+                <td>Fabric</td>
+                <td>Grey</td>
+                <td>2</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
